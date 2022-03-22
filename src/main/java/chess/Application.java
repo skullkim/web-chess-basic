@@ -25,6 +25,7 @@ public class Application {
         });
 
         exception(Exception.class, (exception, request, response) -> {
+            exception.printStackTrace();
             response.status(400);
             response.body(exception.getMessage());
         });

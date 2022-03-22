@@ -12,23 +12,23 @@
         <h1>♟️ 초간단 체스</h1>
         <section class="chess-ui">
             {{#this}}
-            <div class="black-square pawn">
+            <div id="a2" class="black-square pawn">
                 {{#a2}}
                 <span>{{COLOR}}</span>
                 <img src="images/PAWN_{{color}}.png" class="pawn-img" />
                 {{/a2}}
             </div>
-            <div class="white-square pawn">
+            <div id="b2" class="white-square pawn">
                 {{#b2}}
                 <img src="images/PAWN_{{color}}.png" class="pawn-img" />
                 {{/b2}}
             </div>
-            <div class="white-square pawn">
+            <div id="a1" class="white-square pawn">
                 {{#a1}}
                 <img src="images/PAWN_{{color}}.png" class="pawn-img" />
                 {{/a1}}
             </div>
-            <div class="black-square pawn">
+            <div id="b1" class="black-square pawn">
                 {{#b1}}
                 <img src="images/PAWN_{{color}}.png" class="pawn-img" />
                 {{/b1}}
@@ -37,8 +37,12 @@
         </section>
         <section>
             <h2>체스 form</h2>
-            <form enctype="text/plain"></form>
+            <form method="post" action="./move" enctype="text/plain">
+                <input type="text" name="command" placeholder="a1,a2">
+                <button type="button">제출</button>
+            </form>
         </section>
+        <script src="/src/index-cli.js"></script>
     </div>
 </body>
 
